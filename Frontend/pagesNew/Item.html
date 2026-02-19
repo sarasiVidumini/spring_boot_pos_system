@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowCare | Inventory Management</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/Item.css"> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="app-shell">
+    <nav class="side-nav">
+        <div class="nav-brand"><i data-lucide="shield-check"></i></div>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item" title="Dashboard"><i data-lucide="layout-dashboard"></i></a>
+            <a href="Customer.html" class="nav-item" title="Customers"><i data-lucide="users-round"></i></a>
+            <a href="Item.html" class="nav-item active" title="Inventory"><i data-lucide="package-search"></i></a>
+            <a href="Orders.html" class="nav-item" title="Orders"><i data-lucide="shopping-bag"></i></a>
+        </div>
+        <div class="nav-user"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin"></div>
+    </nav>
+
+    <main class="main-viewport">
+        <header class="main-header">
+            <div class="page-title">
+                <h2>Inventory <span class="gradient-text">Management</span></h2>
+            </div>
+            <div class="admin-badge"><span>admin@glowcare.ai</span></div>
+        </header>
+
+        <div class="content-grid">
+            <section class="glass-panel form-section">
+                <h3><i data-lucide="package-plus"></i> Add / Update Item</h3>
+                <form id="itemForm">
+                    <div class="input-group">
+                        <label>Item ID (Auto-gen)</label>
+                        <input type="number" id="itemId" placeholder="ID shows here" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label>Description</label>
+                        <input type="text" id="itemDesc" required placeholder="Ex: Laptop - Dell XPS">
+                    </div>
+                    <div class="input-group">
+                        <label>Unit Price (Rs.)</label>
+                        <input type="number" id="itemPrice" step="0.01" required placeholder="0.00">
+                    </div>
+                    <div class="input-group">
+                        <label>Quantity On Hand</label>
+                        <input type="number" id="itemQty" required placeholder="0">
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="button" id="btnSaveItem" class="btn btn-save">
+                            <i data-lucide="plus-circle"></i> Save
+                        </button>
+                        <button type="button" id="btnUpdateItem" class="btn btn-update">
+                            <i data-lucide="refresh-cw"></i> Update
+                        </button>
+                        <button type="reset" class="btn btn-clear">
+                            <i data-lucide="eraser"></i> Clear
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="glass-panel table-section">
+                <div class="table-header">
+                    <h3><i data-lucide="package"></i> Stock Inventory</h3>
+                    <div class="search-wrap">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="searchItem" placeholder="Search item...">
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Qty</th>
+                            <th style="text-align: center;">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="itemTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="../scripts/Item.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

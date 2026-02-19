@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowCare | Place Order</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="app-shell">
+    <nav class="side-nav">
+        <div class="nav-brand"><i data-lucide="shield-check"></i></div>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item" title="Dashboard"><i data-lucide="layout-dashboard"></i></a>
+            <a href="Customer.html" class="nav-item" title="Customers"><i data-lucide="users-round"></i></a>
+            <a href="Item.html" class="nav-item" title="Inventory"><i data-lucide="package-search"></i></a>
+            <a href="Orders.html" class="nav-item active" title="Orders"><i data-lucide="shopping-bag"></i></a>
+        </div>
+        <div class="nav-user"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin"></div>
+    </nav>
+
+    <main class="main-viewport">
+        <header class="main-header">
+            <div class="page-title">
+                <h2>Place <span class="gradient-text">New Order</span></h2>
+            </div>
+            <div class="order-info">
+                <div class="info-tag">Order ID: <span id="lblOrderId">ORD-001</span></div>
+                <div class="info-tag">Date: <span id="lblDate">2026-02-18</span></div>
+            </div>
+        </header>
+
+        <div class="order-grid">
+            <div class="selection-area">
+                <section class="glass-panel">
+                    <h3><i data-lucide="user"></i> Customer Selection</h3>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Select Customer ID</label>
+                            <select id="cmbCustomerId"><option value="">Select ID</option></select>
+                        </div>
+                        <div class="input-group">
+                            <label>Customer Name</label>
+                            <input type="text" id="orderCustName" readonly>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="glass-panel" style="margin-top: 1.5rem;">
+                    <h3><i data-lucide="package"></i> Item Selection</h3>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Select Item</label>
+                            <select id="cmbItemId"><option value="">Select Item</option></select>
+                        </div>
+                        <div class="input-group">
+                            <label>Price</label>
+                            <input type="text" id="orderItemPrice" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label>Qty On Hand</label>
+                            <input type="text" id="orderQtyOnHand" readonly style="color: #fb7185; font-weight: bold;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Buying Quantity</label>
+                            <input type="number" id="txtBuyQty" placeholder="0">
+                        </div>
+                        <div class="btn-wrap">
+                            <button id="btnAddToCart" class="btn btn-add">
+                                <i data-lucide="shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="glass-panel cart-area">
+                <div class="cart-header">
+                    <h3><i data-lucide="list"></i> Order Details</h3>
+                    <div class="total-display">Total: <span id="lblTotal">Rs. 0.00</span></div>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cartTableBody"></tbody>
+                    </table>
+                </div>
+                <button id="btnPlaceOrder" class="btn btn-place">
+                    <i data-lucide="check-circle"></i> Complete Order
+                </button>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="../scripts/Order.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

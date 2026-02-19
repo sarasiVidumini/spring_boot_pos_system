@@ -1,0 +1,283 @@
+:root {
+    --bg-dark: #020617;
+    --sidebar-bg: rgba(15, 23, 42, 0.8);
+    --glass: rgba(30, 41, 59, 0.5);
+    --primary-glow: #6366f1;
+    --accent-purple: #a855f7;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image:
+            radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 35%),
+            radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.15) 0%, transparent 35%);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Screen එක එහා මෙහා යන්නේ නැති වෙන්න */
+}
+
+.app-shell {
+    display: flex;
+    height: 100vh;
+    padding: 1.2rem;
+    gap: 1.2rem;
+}
+
+/* Sidebar Styling */
+.side-nav {
+    width: 85px;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.nav-brand {
+    position: relative;
+    margin-bottom: 2rem;
+    color: var(--primary-glow);
+}
+
+.brand-glow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-glow);
+    filter: blur(20px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-item {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    border-radius: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--primary-glow);
+    box-shadow: inset 0 0 10px rgba(99, 102, 241, 0.1);
+}
+
+.nav-user img {
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-glow);
+    padding: 2px;
+}
+
+/* Main Content Styling */
+.main-viewport {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    overflow-y: auto;
+}
+
+.main-header {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 18px;
+    border-radius: 1rem;
+    width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-container input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.status-pill {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    padding: 6px 14px;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Dashboard Content */
+.welcome-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary-glow), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 1.5rem;
+}
+
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.action-tile {
+    padding: 1.8rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.action-tile:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.action-tile i {
+    font-size: 1.5rem;
+}
+
+.blue { color: #60a5fa; }
+.purple { color: #c084fc; }
+.green { color: #4ade80; }
+
+.live-clock {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--primary-glow);
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* --- මීට කලින් තිබුණු styles එලෙසම තබා ගන්න --- */
+
+/* Main Content Styling */
+.main-viewport {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    overflow: hidden; /* මුළු viewport එකම scroll වෙන්නේ නැති වෙන්න */
+    height: calc(100vh - 2.4rem); /* Padding එක නිසා ඇතිවන ඉඩ අඩු කිරීම */
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: auto; /* Content එක වැඩි වුණොත් මේ කොටස විතරක් scroll වෙන්න */
+    padding-right: 5px; /* Scrollbar එක නිසා shape එක කැඩෙන්නේ නැති වෙන්න */
+}
+
+/* Scrollbar එක ලස්සනට හදමු (Chrome, Safari, Edge සඳහා) */
+.dashboard-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+    background: var(--glass);
+    border-radius: 10px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 1.5rem;
+    flex: 1; /* ඉතිරි ඉඩ ප්‍රමාණය grid එකට ලබා දීමට */
+}
+
+.welcome-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* පහළටම යන්නේ නැතිව මැදට ගන්න */
+    flex-shrink: 0; /* Header එක කුඩා වීම වැළැක්වීමට */
+}
+
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Panel එක ඇතුළේ content එක scroll වෙන්න ඕනේ නම් */
+.panel-body {
+    flex: 1;
+    overflow-y: auto;
+}

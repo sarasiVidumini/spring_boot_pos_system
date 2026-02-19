@@ -1,0 +1,171 @@
+/* Layout & Grid (Same as Customer for consistency) */
+.content-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 1.5rem;
+    height: calc(100vh - 150px);
+}
+
+.form-section h3, .table-section h3 {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fbbf24; /* Gold/Orange theme for Inventory */
+}
+
+/* Input Styling */
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.05);
+}
+
+/* --- ITEM SPECIFIC BUTTONS --- */
+.btn-row {
+    display: flex;
+    flex-wrap: wrap; /* Button පේළි කැඩීමට */
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Save Button - Glowing Orange/Gold */
+.btn-save {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    color: #000; /* කළු පැහැය රත්තරන් පාටට වඩා හොඳින් පේනවා */
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.btn-save:hover {
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Update Button - Glowing Cyan/Blue */
+.btn-update {
+    background: linear-gradient(135deg, #22d3ee 0%, #0891b2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+}
+
+.btn-update:hover {
+    box-shadow: 0 8px 25px rgba(34, 211, 238, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Clear Button - full width below */
+.btn-clear {
+    flex: none; /* පේළියේ ඉතිරි ඉඩ ගන්න එක නවත්වන්න */
+    width: 100%; /* සම්පූර්ණ පළල ලබා දීම */
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-clear:hover { background: rgba(255, 255, 255, 0.1); color: white; }
+
+/* --- TABLE STYLING --- */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.2);
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.search-wrap input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.table-wrapper {
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 15px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.95rem;
+}
+
+/* Stock Status Indicators */
+.stock-high { color: #4ade80; }
+.stock-low { color: #fb7185; font-weight: bold; }
+
+.btn-delete {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background: #ef4444;
+    color: white;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
