@@ -22,7 +22,7 @@ body {
     color: var(--text-main);
     font-family: 'Outfit', sans-serif;
     height: 100vh;
-    overflow: hidden; /* Screen එක එහා මෙහා යන්නේ නැති වෙන්න */
+    overflow: hidden;
 }
 
 .app-shell {
@@ -220,7 +220,7 @@ body {
     text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
-/* --- මීට කලින් තිබුණු styles එලෙසම තබා ගන්න --- */
+
 
 /* Main Content Styling */
 .main-viewport {
@@ -228,8 +228,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    overflow: hidden; /* මුළු viewport එකම scroll වෙන්නේ නැති වෙන්න */
-    height: calc(100vh - 2.4rem); /* Padding එක නිසා ඇතිවන ඉඩ අඩු කිරීම */
+    overflow: hidden;
+    height: calc(100vh - 2.4rem);
 }
 
 /* Dashboard Content */
@@ -238,11 +238,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    overflow-y: auto; /* Content එක වැඩි වුණොත් මේ කොටස විතරක් scroll වෙන්න */
-    padding-right: 5px; /* Scrollbar එක නිසා shape එක කැඩෙන්නේ නැති වෙන්න */
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
-/* Scrollbar එක ලස්සනට හදමු (Chrome, Safari, Edge සඳහා) */
+
 .dashboard-content::-webkit-scrollbar {
     width: 5px;
 }
@@ -256,14 +256,14 @@ body {
     display: grid;
     grid-template-columns: 1.8fr 1fr;
     gap: 1.5rem;
-    flex: 1; /* ඉතිරි ඉඩ ප්‍රමාණය grid එකට ලබා දීමට */
+    flex: 1;
 }
 
 .welcome-banner {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* පහළටම යන්නේ නැතිව මැදට ගන්න */
-    flex-shrink: 0; /* Header එක කුඩා වීම වැළැක්වීමට */
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .glass-panel {
@@ -276,7 +276,7 @@ body {
     flex-direction: column;
 }
 
-/* Panel එක ඇතුළේ content එක scroll වෙන්න ඕනේ නම් */
+
 .panel-body {
     flex: 1;
     overflow-y: auto;
