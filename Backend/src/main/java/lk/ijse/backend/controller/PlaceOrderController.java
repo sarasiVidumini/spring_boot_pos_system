@@ -23,7 +23,7 @@ public class PlaceOrderController {
         return ResponseEntity.ok("Order Placed Successfully");
     }
 
-    // අලුතින් එකතු කළ GetMapping එක
+
     @GetMapping
     public ResponseEntity<List<OrderDTO>> getAllOrders() {
         List<OrderDTO> allOrders = orderServiceIMPL.getOrders();
