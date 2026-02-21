@@ -70,9 +70,11 @@ $(document).ready(function () {
     // 3. DELETE CUSTOMER
     window.deleteCustomer = function (event, id) {
         event.stopPropagation();
+
         if(confirm("Are you sure you want to delete this customer?")) {
             $.ajax({
-                url: BASE_URL + id,
+                // මෙතන BASE_URL එකට පස්සේ "/" එකක් එකතු කරන්න ඕනේ
+                url: BASE_URL + "/" + id,
                 method: "DELETE",
                 success: function (res) {
                     alert("Customer Deleted!");
@@ -80,7 +82,8 @@ $(document).ready(function () {
                     clearForm();
                 },
                 error: function (error) {
-                    alert("Delete failed!");
+                    console.log(error); // Error එක හරියටම බලාගන්න මේක දාන්න
+                    alert("Delete failed! Check the console for details.");
                 }
             });
         }

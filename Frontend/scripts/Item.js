@@ -71,20 +71,23 @@ $(document).ready(function () {
         });
     }
 
-    // 3. DELETE ITEM
+    // DELETE ITEM
     window.deleteItem = function (event, id) {
         event.stopPropagation();
+
         if(confirm("Are you sure you want to delete this item?")) {
             $.ajax({
-                url: BASE_URL + id,
+                // URL එකට මැදින් "/" එකක් එකතු කළා
+                url: BASE_URL + "/" + id,
                 method: "DELETE",
                 success: function (res) {
                     alert("Item Deleted!");
-                    getAllItems();
-                    clearForm();
+                    getAllItems(); // Item table එක refresh කරන්න
+                    clearForm();   // Form එක clear කරන්න
                 },
                 error: function (error) {
-                    alert("Failed to delete item!");
+                    console.log(error);
+                    alert("Failed to delete item! Please check the console.");
                 }
             });
         }
