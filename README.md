@@ -1,6 +1,6 @@
 ﻿# spring_boot_pos_system
 
-### My spring_boot_pos_system YouTube Link = https://youtu.be/qwBJecFb8OA
+### My spring_boot_pos_system YouTube Link = https://youtu.be/gPwxH2KsvJk
 
 ## GlowCare  - Intelligent POS System
 
@@ -33,4 +33,5 @@ Service Layer: Contains business logic and transactional management (using @Serv
 Repository Layer: Manages database persistence using Spring Data JPA.
 
 Entity/DTO Layer: Uses ModelMapper to securely map data between the database entities and Data Transfer Objects (DTOs).
+
 
